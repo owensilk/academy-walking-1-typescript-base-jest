@@ -1,6 +1,9 @@
 export class Roman {
     convert(n: any): String {
-        return "";
+        if (n) {
+            return "I"
+        }
+        return ""
     }
 
 }

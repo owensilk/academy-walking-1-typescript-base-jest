@@ -10,4 +10,9 @@ describe('roman numeral converter', () => {
         let calculator: Roman = new Roman();
         expect(calculator.convert(1)).toBe("I");
     })
+
+    it("should return 'II' for 2", () => {
+        let calculator: Roman = new Roman();
+        expect(calculator.convert(2)).toBe("II");
+    })
 })
