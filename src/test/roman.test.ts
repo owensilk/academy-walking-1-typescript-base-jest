@@ -7,7 +7,7 @@ describe('roman numeral converter', () => {
         ["I", 1],
         ["II", 2],
         ["III", 3],
-        ["IIII", 4],
+        ["IV", 4],
     ]).it("should give %j for %j number", (roman_numeral: string, number: number) => {
         let calculator: Roman = new Roman();
         expect(calculator.convert(number)).toBe(roman_numeral);
