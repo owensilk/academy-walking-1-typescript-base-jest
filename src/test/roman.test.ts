@@ -15,4 +15,8 @@ describe('roman numeral converter', () => {
         let calculator: Roman = new Roman();
         expect(calculator.convert(2)).toBe("II");
     })
+    it("should return 'III' for 3", () => {
+        let calculator: Roman = new Roman();
+        expect(calculator.convert(3)).toBe("III");
+    })
 })
