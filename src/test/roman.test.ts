@@ -3,7 +3,7 @@ const each = require("jest-each").default;
 
 describe('ones are repeated up to 3 times', () => {
     each([
-        ["", null],
+        ["", 0],
         ["I", 1],
         ["II", 2],
         ["III", 3],
@@ -15,7 +15,6 @@ describe('ones are repeated up to 3 times', () => {
 
 describe('multiples of 5 have their own symbols', () => {
     each([
-        ["", null],
         ["V", 5],
         ["X", 10],
         ["L", 50],
@@ -26,11 +25,20 @@ describe('multiples of 5 have their own symbols', () => {
     });
 })
 
-describe('one less than a multiple of 5 prepend a I', () => {
+describe('multiples of 5 + 3 have fives symbol and ones', () => {
     each([
-        ["", null],
-        ["IV", 4],
-        ["IX", 9],
+        ["VI", 6],
+        ["VII", 7],
+        ["VIII", 8],
+        ["XI", 11],
+        ["XII", 12],
+        ["XIII", 13],
+        ["LI", 51],
+        ["LII", 52],
+        ["LIII", 53],
+        ["CI", 101],
+        ["CII", 102],
+        ["CIII", 103]
     ]).it("should give %j for %j number", (roman_numeral: string, number: number) => {
         let calculator: Roman = new Roman();
         expect(calculator.convert(number)).toBe(roman_numeral);
