@@ -15,6 +15,10 @@ const board = () => {
     }
 
     const set = (x: number, y: number, play: Play) => {
+        if (play == Play.O) {
+            throw new Error("Illegal move")
+        }
+
         grid[x][y] = play.toString();
     }
 
