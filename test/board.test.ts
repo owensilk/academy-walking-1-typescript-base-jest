@@ -43,4 +43,9 @@ describe('Board test', () => {
         expect(() => board.set(0, 0, Play.O)).toThrow(new Error("Illegal move, the coordinate has already been played"))
     })
 
+    it("should raise an incorrect player error", () => {
+        let board = Board();
+        board.set(0, 0, Play.X)
+        expect(() => board.set(0, 0, Play.X)).toThrow(new Error("Next move should be O"))
+    })
 })

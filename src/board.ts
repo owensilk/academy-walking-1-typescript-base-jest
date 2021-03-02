@@ -37,6 +37,10 @@ const board = () => {
             throw new Error(`Next move should be ${next}`)
         }
 
+        if (grid[x][y] != "") {
+            throw new Error("Illegal move, the coordinate has already been played");
+        }
+
         grid[x][y] = play.toString();
         lastPlay = play
     }
