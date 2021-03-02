@@ -22,13 +22,19 @@ const board = () => {
         return JSON.stringify(grid) === JSON.stringify(emptyGrid);
     }
 
+    const nextMove = (play: Play) => {
+        if (play === Play.X.toString()) return Play.O
+        return Play.X
+    }
+
     const set = (x: number, y: number, play: Play) => {
         if (gridIsEmpty() && play === Play.O.toString()) {
             throw new Error("Illegal move")
         }
 
-        if (lastPlay == Play.O.toString()) {
-            throw new Error("Next move should be X")
+        if (lastPlay == play) {
+            let next = nextMove(play)
+            throw new Error(`Next move should be ${next}`)
         }
 
         grid[x][y] = play.toString();
