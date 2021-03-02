@@ -1,13 +1,9 @@
 const game = () => {
-    const newGame = () => {
-
+    const getBoard = (): string[][] => {
+        return [["", "", ""], ["", "", ""], ["", "", ""]];
     }
 
-    const getBoard = () => {
-
-    }
-
-    return { newGame, getBoard }
+    return { getBoard }
 };
 
 export default game;
