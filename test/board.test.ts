@@ -24,10 +24,17 @@ describe('Board test', () => {
         expect(board.state()).toEqual([["X", "O", ""], ["", "", ""], ["", "", ""]]);
     });
 
-    it("should raise an error if the coordinate has already been played", () => {
+    it("should raise an error if same player plays twice in a row", () => {
         let board = Board();
         board.set(0, 0, Play.X)
         board.set(0, 1, Play.O)
         expect(() => board.set(0, 2, Play.O)).toThrow(new Error("Next move should be X"))
     });
+
+    it("should raise an error if same player plays twice in a row", () => {
+        let board = Board();
+        board.set(0, 0, Play.X)
+        expect(() => board.set(0, 2, Play.X)).toThrow(new Error("Next move should be O"))
+    });
+
 })
