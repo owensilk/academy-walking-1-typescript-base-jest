@@ -4,18 +4,24 @@ export enum Play {
 }
 
 const board = () => {
-    let grid = [
+    const emptyGrid = [
         ["", "", ""],
         ["", "", ""],
         ["", "", ""]
     ]
 
+    let grid = JSON.parse(JSON.stringify(emptyGrid));
+
     const state = () => {
         return grid
     }
 
+    const gridIsEmpty = () => {
+        return JSON.stringify(grid) === JSON.stringify(emptyGrid);
+    }
+
     const set = (x: number, y: number, play: Play) => {
-        if (play == Play.O) {
+        if (gridIsEmpty() && play === Play.O.toString()) {
             throw new Error("Illegal move")
         }
 
