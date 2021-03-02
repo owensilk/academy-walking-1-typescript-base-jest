@@ -3,11 +3,16 @@
         "module": "commonjs",
         "target": "es6",
         "strict": true,
-        "declaration":true,
+        "declaration": true,
         "noImplicitAny": true,
         "sourceMap": false,
         "outDir": "./dist",
     },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules"]
+    "include": [
+        "src/**/*",
+        "test"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
 }
