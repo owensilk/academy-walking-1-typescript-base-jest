@@ -1,9 +1,17 @@
+import Board from "../src/board";
+
 const game = () => {
-    const getBoard = (): string[][] => {
-        return [["", "", ""], ["", "", ""], ["", "", ""]];
+    let board = Board();
+
+    const newGame = () => {
+        board = Board();
     }
 
-    return { getBoard }
+    const getBoard = (): string[][] => {
+        return board.state()
+    }
+
+    return { getBoard, newGame }
 };
 
 export default game;
