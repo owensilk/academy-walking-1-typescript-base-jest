@@ -1,14 +1,19 @@
-import Board from "../src/board";
+import Board, { Play } from "../src/board";
 
 describe('Board test', () => {
     it("should create an empty board", () => {
         let board = Board();
-        expect(board.state()).toEqual([[null, null, null], [null, null, null], [null, null, null]]);
+        expect(board.state()).toEqual([["", "", ""], ["", "", ""], ["", "", ""]]);
     });
 
-    it("should create an empty board", () => {
+    it("should make the move based on x, y corrdinates", () => {
         let board = Board();
-        board.set(0, 0, "X")
-        expect(board.state()).toEqual([["X", null, null], [null, null, null], [null, null, null]]);
+        board.set(0, 0, Play.X)
+        expect(board.state()).toEqual([["X", "", ""], ["", "", ""], ["", "", ""]]);
+    });
+
+    it("should raise an error if the first move is not X", () => {
+        let board = Board();
+        expect(() => board.set(1, 2, Play.O)).toThrow(new Error("Illegal move"))
     });
 })
